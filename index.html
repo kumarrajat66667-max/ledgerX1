@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="LedgerX Books — Commerce revision e-books and physical books.">
+<title>LedgerX Books | Commerce Made Simple</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#home"><span>LX</span> LedgerX</a>
+  <nav id="nav">
+    <a href="#home">Home</a><a href="#shop">Shop</a><a href="#ebooks">E-Books</a><a href="#physical">Physical Books</a><a href="#about">About</a>
+  </nav>
+  <button class="cart-btn" onclick="openCart()">🛒 Cart <b id="cartCount">0</b></button>
+  <button class="menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">LEDGERX BOOKS • COMMERCE</div>
+    <h1>Commerce revision.<br><span>Made simple.</span></h1>
+    <p>Exam-focused e-books and physical revision books designed to help Commerce students revise faster and study smarter.</p>
+    <div class="actions"><a class="btn white" href="#shop">Shop Books →</a><a class="btn outline" href="#ebooks">Browse E-Books</a></div>
+    <div class="trust"><span>✓ Instant e-book access</span><span>✓ Physical books available</span><span>✓ Student-focused</span></div>
+  </div>
+  <div class="hero-book">
+    <div class="book-cover"><small>LEDGERX</small><strong>ACCOUNTING<br>REVISION</strong><em>Concepts • Formulae • Practice</em><b>01</b></div>
+    <div class="shadow"></div>
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <div class="heading"><div><div class="eyebrow">SHOP LEDGERX</div><h2>Pick your way to revise.</h2></div><p>Digital for instant access. Physical for a proper study desk experience.</p></div>
+  <div class="category-grid">
+    <a class="category" href="#ebooks"><span>📱</span><h3>E-Books</h3><p>Instant digital revision books.</p><b>Shop e-books →</b></a>
+    <a class="category" href="#physical"><span>📚</span><h3>Physical Books</h3><p>Printed books delivered to you.</p><b>Shop physical →</b></a>
+    <a class="category" href="#bundles"><span>🎯</span><h3>Bundles</h3><p>Combine subjects and save.</p><b>View bundles →</b></a>
+  </div>
+</section>
+
+<section class="section grey" id="ebooks">
+  <div class="heading"><div><div class="eyebrow">DIGITAL</div><h2>E-Books</h2></div><p>Buy once and access your digital revision material from your device.</p></div>
+  <div class="products" id="ebookProducts"></div>
+</section>
+
+<section class="section" id="physical">
+  <div class="heading"><div><div class="eyebrow">PRINTED</div><h2>Physical Books</h2></div><p>Revision books for students who prefer paper, highlighting and handwritten notes.</p></div>
+  <div class="products" id="physicalProducts"></div>
+</section>
+
+<section class="section dark" id="bundles">
+  <div class="heading light"><div><div class="eyebrow">BEST VALUE</div><h2>Student Bundles</h2></div><p>Bundle multiple books together for a complete revision setup.</p></div>
+  <div class="bundle">
+    <div><span class="tag">COMMERCE BUNDLE</span><h3>Complete Commerce Revision Pack</h3><p>Accounting + Business Studies + Economics revision resources.</p></div>
+    <div class="bundle-price"><strong>₹999</strong><del>₹1,497</del><button class="btn white" onclick="addToCart('bundle')">Add Bundle →</button></div>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="about-inner"><div><div class="eyebrow">ABOUT LEDGERX</div><h2>Built around the way students actually revise.</h2></div><p>LedgerX creates concise, structured Commerce resources with a simple goal: less searching, more revising. Start with one book or build your complete revision library.</p></div>
+</section>
+</main>
+
+<footer><div class="logo"><span>LX</span> LedgerX</div><p>Commerce revision. Made simple.</p><small>© 2026 LedgerX</small></footer>
+
+<div class="overlay hidden" id="cartOverlay" onclick="if(event.target===this)closeCart()">
+ <aside class="cart"><button class="close" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="cartItems"></div><div class="total"><span>Total</span><strong id="cartTotal">₹0</strong></div><button class="checkout" onclick="checkout()">Proceed to Checkout</button><p class="note">Demo checkout: connect a payment gateway before accepting real orders.</p></aside>
+</div>
+
+<div class="overlay hidden" id="productOverlay" onclick="if(event.target===this)closeProduct()">
+ <div class="product-modal"><button class="close" onclick="closeProduct()">×</button><div id="productModalBody"></div></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
